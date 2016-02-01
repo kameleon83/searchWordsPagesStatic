@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Search in my Website</title>
+    <style>
+    html, body {padding: 0; margin: 0; text-align: center;}
+    #searcharea{position: absolute; width: 100%; height: 150px; border: 1px solid black; background-color: white;}
+    #searcharea h2{font-size: 1.5em}
+    #search{position: relative; min-width: 50%; height: 30px; font-size: 1.2em;}
+    #update{position: absolute;width: 100%;top: 150px;margin: 0; padding: 0;}
+    #update ul{list-style-type: none;}
+    #update ul li{display: block;}
+    #update ul li a{padding: 10px; display: block;}
+    #update ul li a:hover{zoom: 1.2; background-color: rgba(0,0,0,0.1)}
+    </style>
+</head>
+<body>
+<div id="searcharea">
+    <h2>Recherche sur le site de Kinderstra</h2>
+    <input type="search" id="search"/>
+    <br>
+    <br>
+    <div id="count"></div>
+</div>
+<div id="update"></div>
+
+</body>
+
+<script src="jquery-2.2.0.min.js" charset="utf-8"></script>
+<script src="search.js" charset="utf-8"></script>
+</html>
