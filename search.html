@@ -5,25 +5,35 @@
     <title>Search in my Website</title>
     <style>
     html, body {padding: 0; margin: 0; text-align: center;}
-    #searcharea{position: absolute; width: 100%; height: 150px; border: 1px solid black; background-color: white;}
-    #searcharea h2{font-size: 1.5em}
-    #search{position: relative; min-width: 50%; height: 30px; font-size: 1.2em;}
-    #update{position: absolute;width: 100%;top: 150px;margin: 0; padding: 0;}
-    #update ul{list-style-type: none;}
+    #searcharea{position: fixed; width: 100%; background-color: white; z-index: 1000}
+    #searcharea h1{font-size: 80px;color: #C32519;margin:0;padding:0;}
+    #search{position: relative; min-width: 50%; height: 30px; font-size: 1.2em;margin-top: 50px;color: #C32519}
+    #count{font-size: 1.2em;margin-left: 10px;color: #C32519}
+    #update{position: absolute;width: 100%;top: 200px;margin: 0; padding: 0;}
+    #update ul{list-style-type: none; margin-bottom: 150px;padding: 0;}
     #update ul li{display: block;}
     #update ul li a{padding: 10px; display: block;}
     #update ul li a:hover{zoom: 1.2; background-color: rgba(0,0,0,0.1)}
+    .footer{position: fixed;background-color: white; width: 100%;height: 100px;bottom: 0;left: 0;right: 0;}
+
+    .footer a{ position: relative; left: 0; right: 0; top: 0; bottom: 0; margin: 0 auto; width: 300px;
+       height: 60px; line-height: 60px; vertical-align: middle; font-size: 30px;
+       background-color: #a2a3a8; border-radius: 20px; box-shadow:0 5px 5px #C32519, 0 5px 5px #fff inset;
+       text-decoration: none;color: white;display: block;}
+
+    .footer a:hover{color: #53608d;box-shadow: 0 5px 5px #C32519 inset,  0 5px 5px #fff;
+      background-color: rgba(0,0,0,0.2);-webkit-transition: background-color 1s linear;
+      -moz-transition: background-color 1s linear;-ms-transition: background-color 1s linear;
+      -o-transition: background-color 1s linear;transition: background-color 0.5s linear;}
     </style>
 </head>
 <body>
 <div id="searcharea">
-    <h2>Recherche sur le site de Kinderstra</h2>
-    <input type="search" id="search"/>
-    <br>
-    <br>
-    <div id="count"></div>
+    <h1>Recherche sur le site de Kinderstra</h1>
+    <input type="search" id="search"/><span id="count"></span>
 </div>
 <div id="update"></div>
+<div class="footer"><a href="index.html">Retour</a></div>
 
 </body>
 

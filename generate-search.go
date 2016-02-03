@@ -28,6 +28,7 @@ type Search struct {
 	Words []string
 }
 
+// Page Title
 type Page struct {
 	Title string
 }
@@ -218,7 +219,6 @@ func createFile(f string) {
 
 func jsonWrite(path string) error {
 	csvFile, _ := os.Open(path)
-	defer csvFile.Close()
 
 	reader := csv.NewReader(csvFile)
 
@@ -257,6 +257,7 @@ func jsonWrite(path string) error {
 	jsonFile.Write(jsonData)
 	fmt.Println("Fichier .data.json créé le ", time.Now())
 
+	csvFile.Close()
 	deleteFile(filenameCsv)
 
 	return err
@@ -265,6 +266,7 @@ func jsonWrite(path string) error {
 func main() {
 	go func() {
 		fmt.Println("Création du .json le ", time.Now())
+		fmt.Println("Veuillez patienter quelques instants. Une fois fini, un message vous l'indiquera.")
 		createFile(filenameCsv)
 
 		if err := filepath.Walk(root, walkpath); err == nil {
